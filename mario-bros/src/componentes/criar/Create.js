@@ -2,6 +2,8 @@ import { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { Api } from '../../api/api'
 
+import '../../estilos/post.scss'
+
 export class Create extends Component {
     constructor(props) {
         super(props)
@@ -10,7 +12,7 @@ export class Create extends Component {
         }
     }
 
-    enviar = async event => {
+    createHandler = async event => {
         event.preventDefault();
         const { nome, imgUrl } = event.target;
 
@@ -42,9 +44,8 @@ export class Create extends Component {
     render(){
         return(
             <>
-            <h4> Adicione os personagens aqui</h4>
 
-            <Form onSubmit={this.enviar}>
+            <Form onSubmit={this.createHandler}>
                 <Form.Group controlId ='nome'>
                     <Form.Label>Nome do Personagem</Form.Label>
                     <Form.Control type='text' placeholder="Digite o nome aqui" />
@@ -60,9 +61,7 @@ export class Create extends Component {
                     certifique-se de que o link enviado é válido</Form.Text>
                 </Form.Group>
 
-                <Button type='submit'>Criar</Button>
-                
-
+                <Button variant="success" type='submit'>Criar</Button>
             </Form>
             </>
         )

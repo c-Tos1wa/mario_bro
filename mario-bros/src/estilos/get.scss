@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+  justify-content: center;
+
+  .loading{
+    width: 10rem;
+  }
+
+  .noData{
+    font-size: 2rem;
+    margin-top: 70px;
+  }
+}

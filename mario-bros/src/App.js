@@ -1,18 +1,20 @@
+import { Switch, Route } from 'react-router-dom'
+
 import logo from './logo.png'
 
-import {Delete} from './componentes/deletar/DeleteAll'
-import {Read} from './componentes/listar/ReadAll'
-import {ReadOne} from './componentes/listar/ReadOne'
-import {About} from './componentes/sobre/About'
-import {Create} from './componentes/criar/Create'
-
-
-import './estilos/app.scss'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { Read } from './componentes/listar/ReadAll'
+import { ReadOne } from './componentes/listar/ReadOne'
+import { DeleteAll } from './componentes/deletar/DeleteAll'
+import { DeleteOne } from './componentes/deletar/DeleteOne'
+import { Create } from './componentes/criar/Create'
+import { Update } from './componentes/editar/Update'
+import { About } from './componentes/sobre/About'
 
 import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-import {Switch, Route} from 'react-router-dom'
+import './estilos/app.scss'
+
 
 function App() {
   return (
@@ -22,11 +24,11 @@ function App() {
       </div>
 
       <Navbar className='justify-content-center' expand='sm'>
-        <Nav>
+        <Nav fill variant="tabs">
           <Nav.Link id='style-link' href='/'>Início</Nav.Link>
-          <Nav.Link id='style-link' href='/criar'>Adicionar Personagens</Nav.Link>
-          <Nav.Link id='style-link' href='/deletar'>Deletar todos</Nav.Link>
-          <Nav.Link id='style-link' href='/sobre'>Sobre</Nav.Link>
+          <Nav.Link id='style-link' href='/create'>Adicionar Personagens</Nav.Link>
+          <Nav.Link id='style-link' href='/delete_all'>Deletar tudo</Nav.Link>
+          <Nav.Link id='style-link' href='/about'>Sobre</Nav.Link>
         </Nav>
       </Navbar>
 
@@ -35,16 +37,16 @@ function App() {
           <Col>
             <Switch>
               <Route path='/' exact={true} component={Read}></Route>
-              <Route path='/criar' component={Create}></Route>
               <Route path='/view/:id' component={ReadOne}></Route>
-              <Route path='/deletar' component={Delete}></Route>
-              <Route path='/sobre' component={About}></Route>
+              <Route path='/create' component={Create}></Route>
+              <Route path='/delete/:id' component={DeleteOne}></Route>
+              <Route path='/update/:id' component={Update}></Route>
+              <Route path='/delete_all' component={DeleteAll}></Route>
+              <Route path='/about' component={About}></Route>
             </Switch>
           </Col>
         </Row>
-
       </Container>
-
     </>
   );
 }

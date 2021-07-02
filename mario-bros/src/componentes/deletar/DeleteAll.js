@@ -1,8 +1,10 @@
 import { Component } from 'react'
-import { Button } from 'react-bootstrap'
-import { Api } from '../../api/api' 
+import { Button, Alert } from 'react-bootstrap'
+import { Api } from '../../api/api'
+import '../../estilos/delete.scss'
 
-export class Delete extends Component {
+
+export class DeleteAll extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -10,7 +12,7 @@ export class Delete extends Component {
         }
     }
 
-    clicar = async event => {
+    deleteHandle = async event => {
         event.preventDefault();
 
         this.setState({
@@ -26,29 +28,30 @@ export class Delete extends Component {
             isLoading: false
         })
 
-        this.voltarInicio();
+        this.goHome()
     }
 
-    voltarInicio = () => {
+    goHome = () => {
         this.props.history.push('/')
     }
 
     render(){
         return (
-            <>
-            <h3>Tem certeza de que deseja apagar tudo?</h3>
-            <p>Esta ação não poderá ser revertida.</p>
+            <Alert variant="danger">
+                <Alert.Heading>
+                    Tem certeza de que deseja apagar tudo? Esta ação não poderá ser revertida.
+                </Alert.Heading>
+                <Button 
+                    className='btn' 
+                    variant="danger" 
+                    onClick={this.deleteHandle}>Excluir tudo</Button>
 
-            <Button className='btn' variant="danger" onClick={this.clicar}>
-                Excluir tudo
-            </Button>
-
-            <Button className='btn' variant='primary' onClick={this.voltarInicio}>
-                Cancelar
-            </Button>
-            </>
+                <Button 
+                    className='btn' 
+                    variant='primary' 
+                    onClick={this.goHome}>Cancelar</Button>
+            </Alert>
         )
     }
-
 }
 

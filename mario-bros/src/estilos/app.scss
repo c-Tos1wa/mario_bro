@@ -2,9 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    align-items: center;
 }
 
+html body{
+    background-color: sandybrown;
+}
+  
 .logoIcon {
     background-color: rgb(164, 215, 235);
     display: flex;
@@ -21,7 +24,6 @@
 
     .navbar-nav {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
