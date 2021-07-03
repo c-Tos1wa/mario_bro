@@ -2,3 +2,12 @@
   border-style: outset;
   border-radius: 10px;
 }
+
+.btn.btn.btn-primary:hover{
+  background-color: rgb(164, 164, 250);
+}
+
+.btn:hover{
+  -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,0.5));
+  filter: drop-shadow(15px 10px 5px rgba(0,0,0,0.5));
+}

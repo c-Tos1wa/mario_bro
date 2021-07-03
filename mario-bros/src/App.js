@@ -24,7 +24,7 @@ function App() {
       </div>
 
       <Navbar className='justify-content-center' expand='sm'>
-        <Nav fill variant="tabs">
+        <Nav justify variant="tabs">
           <Nav.Link id='style-link' href='/'>Início</Nav.Link>
           <Nav.Link id='style-link' href='/create'>Adicionar Personagens</Nav.Link>
           <Nav.Link id='style-link' href='/delete_all'>Deletar tudo</Nav.Link>

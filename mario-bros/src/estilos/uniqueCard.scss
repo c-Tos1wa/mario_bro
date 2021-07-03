@@ -1,4 +1,11 @@
-.unique-card card{
-  margin-top: 50px;
+.unique-card{
   display: block;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.unique-card:hover{
+  border: 2px solid #000;
+  -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,0.5));
+  filter: drop-shadow(15px 10px 5px rgba(0,0,0,0.5));
 }
