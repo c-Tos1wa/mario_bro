@@ -6,7 +6,7 @@ import '../../estilos/about.scss'
 export class About extends Component {
     render(){
         return (
-            <Card className="text-left">
+            <Card className="text-align-center">
                 <Card.Img variant='top' src='' />
                 <Card.Body>
                     <Card.Title>Cristina Toshie Iwassaki</Card.Title>
